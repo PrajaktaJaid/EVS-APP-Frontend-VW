@@ -1,0 +1,38 @@
+<div class="voter-container">
+  <h2>Voters List</h2>
+  <span id="voter-count" class="voter-count">{{voterLabel}} : {{votersCount}}</span>
+  <form [formGroup]="genderForm">
+    <fieldset>
+      <legend>Gender</legend>
+      <div class="radio-option">
+        <input type="radio" id="gender-male" name="genderControl" formControlName="genderControl" value="Male">
+        <label for="gender-male">Male</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="gender-female" name="genderControl"formControlName="genderControl"  value="Female">
+        <label for="gender-female">Female</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="other" name="genderControl" formControlName="genderControl" value="Other">
+        <label for="other">Other</label>
+      </div>
+    </fieldset>
+  </form>
+  
+<table class="voters-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let voter of voters">
+      <td>{{ voter.name }}</td>
+      <td>{{ voter.age }}</td>
+      <td>{{ voter.gender }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

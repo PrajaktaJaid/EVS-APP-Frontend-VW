@@ -1,0 +1,56 @@
+<form [formGroup]="voterForm" (ngSubmit)="onSubmit()">
+    <div class="form-container">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name :</label>
+          <input type="text" class="form-control" id="name" formControlName="name" required>
+          <div class="invalid-feedback"
+               *ngIf="voterFormControl['name'].invalid && ((submitted || voterFormControl['name'].touched) || (voterFormControl['name'].dirty))">
+            <div *ngIf="voterFormControl['name'].errors?.['required']">Name is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="age">Age :</label>
+          <input type="number" class="form-control" id="age" formControlName="age" required>
+          <div class="invalid-feedback"
+               *ngIf="voterFormControl['age'].invalid && ((submitted || voterFormControl['age'].touched) || (voterFormControl['age'].dirty))">
+            <div *ngIf="voterFormControl['age'].errors?.['required']">Age required!</div>
+            <div *ngIf="voterFormControl['age'].errors?.['min']">Minimum age is 18!</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender :</label>
+          <select class="form-control" id="gender" formControlName="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <div class="invalid-feedback" *ngIf="voterFormControl['gender'].invalid && (submitted || voterFormControl['gender'].touched || voterFormControl['gender'].dirty)">
+            <div *ngIf="voterFormControl['gender'].errors?.['required']">Gender required!</div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="constituency">Constituency :</label>
+            <select class="form-control" id="constituency" formControlName="constituencyId" required>
+              <option value="">Select Constituency</option>
+              <option *ngFor="let constituency of constituencies" [value]="constituency.id">
+                {{ constituency.name|uppercase}}
+              </option>
+            </select>
+            <div class="invalid-feedback"
+                 *ngIf="voterFormControl['constituencyId'].invalid && (submitted || voterFormControl['constituencyId'].touched)">
+              <div *ngIf="voterFormControl['constituencyId'].errors?.['required']">
+                Please select a constituency.
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="button-container">
+        <button type="submit">Save Voter Details</button>
+      </div>
+      <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    </div>
+    
+  </form>
+  

@@ -1,0 +1,20 @@
+.content{
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    background-color:beige;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3
+    );
+}
+.content h2{
+    color:black;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.content p{
+    color:black;
+    font-size: 18px;
+    margin-bottom: 10px;
+}

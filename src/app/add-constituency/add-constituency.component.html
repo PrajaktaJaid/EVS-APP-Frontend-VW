@@ -1,0 +1,32 @@
+<form [formGroup]="constituencyForm" (ngSubmit)="onSubmit()">
+    <div class="form-container">
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <label for="name">Constituency Name :</label>
+        <input type="text" class="form-control" id="name" formControlName="name" required>
+        <div class="invalid-feedback"
+             *ngIf="constituencyFormControl['name'].invalid && (constituencyFormControl['name'].touched || constituencyFormControl['name'].dirty)">
+          <div *ngIf="constituencyFormControl['name'].errors?.['required']">Name required!</div>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <button type="submit" class="btn btn-primary btn-block">Add Constituency</button>
+      </div>
+    </div>
+  
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+
+    <div class="table-container">
+        <h2>Available Constituencies</h2>
+        <table>
+            <tbody>
+              <tr *ngFor="let constituency of constituencies">
+                <td>{{constituency.name}}</td>
+            </tr>
+              </tbody>
+          </table>
+        </div>
+</div>
+</form>
+
+      

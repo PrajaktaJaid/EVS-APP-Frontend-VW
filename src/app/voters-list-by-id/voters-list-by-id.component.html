@@ -1,0 +1,26 @@
+<div class="container">
+    <label for="searchId">Enter Voter ID :</label>
+    <div class="search-container">
+        <input type="number" placeholder="Enter ID" [(ngModel)]="searchId">
+        <button (click)="onSearch()">Search</button>
+      </div>
+      
+      <table class="data-table" *ngIf="isLoaded">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{voter.name|uppercase}}</td>
+            <td>{{voter.age}}</td>
+            <td>{{voter.gender}}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>
+  

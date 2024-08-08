@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="dropdown-container">
+        <h2>Available Constituencies</h2>
+        <select #dropdown>
+            <option value="" disabled selected>Select Constituency</option>
+            <option *ngFor="let c of constituencies" [value]="c.name">{{c.name}}</option>
+        </select>
+        <button (click)="getSelectedValue()">Search</button>
+    </div>
+
+    <table class="voter-table" *ngFor="voterCount">0>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let voter of voters">
+        <td>{{voter.name}}</td>
+        <td>{{voter.age}}</td>
+        <td>{{voter.gender}}</td>
+        </tr>
+    </tbody>
+    </table>
+    <span id="voter-count" class="voter-count" *ngIf="voterCount>0">There is {{voterCount}} register voter in constituency</span> 
+</div>

@@ -1,0 +1,97 @@
+.form-container {
+  max-width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color:beige;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  }
+  
+  /* Form row styling */
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  /* Form group styling (adjust for specific column layout) */
+  .form-group {
+    margin-bottom: 0.5rem;
+    width: 100%;  /* Adjust width based on your column layout */
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+  
+  .form-control {
+    display: block;
+    width: 100%;  /* Adjust width as needed */
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;  /* Ensure consistent width with padding */
+  }
+  
+  .form-control.invalid-feedback {
+    display: block;
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Submit button styling */
+  .btn-primary {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:darkgray;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color:burlywood;
+  }
+  
+  /* Success message styling */
+  .success-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: green;
+    color:black;
+    border: 1px solid #c3e6cb;
+  }
+  
+  /* Table container styling */
+  .table-container {
+    margin-top: 2rem;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;  /* Adjust width as needed */
+    border-collapse: collapse;
+  }
+  
+  /* Table header styling */
+  table thead tr th {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  /* Table body styling */
+  table tbody tr td {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  
